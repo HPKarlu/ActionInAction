@@ -1,0 +1,17 @@
+name: "HPKarlu's Action in Action"
+description: 'Greets someone and returns always 21.'
+inputs:
+  who-to-greet: # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+
+outputs:
+  answer: # id of the output
+    description: 'The answer to everything (always 108)'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    -  ${{ inputs.who-to-greet }}
